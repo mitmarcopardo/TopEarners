@@ -5,6 +5,7 @@ function renderPosts(boston, container) {
   
   // VARIABLES
   let html2 = '';
+  let html3 = '';
   var keys = [];
   var values = [];
   var nobject = {};
@@ -69,16 +70,18 @@ function renderPosts(boston, container) {
  
  
  // PRINT / SHOW KEYS AND VALUES >200000
- //for (const [key, value] of Object.entries(top)) {
- // html2 +=
- //     '<li class="post">' + '<h2>' + `${key}` + '</h2>' + '<h3>' + `${value}` + '</h3>';
+ for (const [key, value] of Object.entries(top)) {
+  html3 +=
+      '<li class="post">' + '<h2>' + `${key}` + '</h2>' + '<h3>' + `${value}` + '</h3>';
 
- //}
-
+ }
  container.innerHTML = '<ul id = "data">' + html + "</ul>"; 
  topSalaries.innerHTML = '<ul id = "data">' + html2 + "</ul>";
+ topEmployees.innerHTML = '<ul id = "data">' + html3 + "</ul>";
   
 }
 renderPosts(boston, document.getElementById('container'));
 
 renderPosts(boston, document.getElementById('topSalaries'));
+
+renderPosts(boston, document.getElementById('topEmployees'));
